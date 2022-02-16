@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import githubIMG from '../../Img/github-logo.png';
+
 
 const Header = () => {
   return (
@@ -55,12 +57,9 @@ const Header = () => {
             <MotionLI title={"Projects"} goto={"#projects-page"} />
 
             {/* Contact li */}
-            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <a
-                href="#"
-                className="block text-xl text-white rounded bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent"
-              >
-                Contact me
+            <motion.li whileHover={{ scale: 1.1 }}  whileTap={{ scale: 0.9 }}>
+              <a href='https://github.com/G4LH4'>
+                  <img src={githubIMG} className={'w-fit h-8 rounded mx-auto'} />
               </a>
             </motion.li>
           </ul>
@@ -84,3 +83,4 @@ const MotionLI = ({ title, goto }) => {
   );
 };
 export default Header;
+

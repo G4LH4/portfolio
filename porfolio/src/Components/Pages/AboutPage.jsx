@@ -19,7 +19,7 @@ const AboutPage = () => {
           id="img"
           className="float-right w-2/5 ml-auto"
         >
-          <img src={aboutMeIMG} className="w-4/5 mx-auto bg-bubble2" />
+          <img src={aboutMeIMG} className="mx-auto bg-bubble2" />
         </motion.div>
       </div>
     </div>

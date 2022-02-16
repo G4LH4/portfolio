@@ -7,7 +7,7 @@ const ProjectsPage = () => {
   return (
     <div id="projects-page">
       <div className="mt-15">
-        <TitleText title={"Projects"} />
+        <TitleText title={"Last projects"} />
         <CardProjects />
       </div>
     </div>

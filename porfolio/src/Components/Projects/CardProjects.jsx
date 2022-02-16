@@ -1,26 +1,44 @@
-import React from "react";
-import aboutMeIMG from "../../Img/aboutMe.svg";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+import formattedTimeIMG from "../../Img/formated-time.png";
+import librarianIMG from "../../Img/librarian.png";
+
+import fetchapi from "../../Services/fetchApi";
+
 const CardProjects = () => {
+  const [gif, setGif] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const data = await fetchapi();
+      setGif(data);
+    })();
+  }, []);
+
   return (
     <div id="cards" className="flex ">
       <Card
-        projectIMG={aboutMeIMG}
+        projectIMG={formattedTimeIMG}
         title={"formatted-time"}
         link={"https://github.com/G4LH4/library-formattedTime"}
       />
       <Card
-        projectIMG={aboutMeIMG}
+        projectIMG={gif}
         title={"galhaphy"}
         link={"https://github.com/G4LH4/galhaphy"}
       />
 
-      <Card projectIMG={aboutMeIMG} title={"formatted-time"} />
+      <Card
+        projectIMG={librarianIMG}
+        title={"formatted-time"}
+        link={"https://github.com/G4LH4/LibrarianBot"}
+      />
     </div>
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const Card = ({ projectIMG, title, link }) => {
   return (
     <motion.div
@@ -28,9 +46,9 @@ const Card = ({ projectIMG, title, link }) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="w-1/4 mx-auto mt-20 border rounded-xl"
+      className={` w-1/4 mx-auto mt-20 border  rounded-xl`}
     >
-      <h4 className="p-2 text-2xl text-white border-b ">{title}</h4>
+      <h4 className="p-2 text-2xl text-gray-500 border-b ">{title}</h4>
 
       <motion.img
         drag
@@ -41,7 +59,7 @@ const Card = ({ projectIMG, title, link }) => {
           bottom: 0,
         }}
         src={projectIMG}
-        className="w-4/6 pb-10 mx-auto mt-10"
+        className={`w-4/6  pb-10 mx-auto mt-10`}
       />
 
       <div className="border-t">
@@ -53,7 +71,7 @@ const Card = ({ projectIMG, title, link }) => {
             window.location = link;
           }}
         >
-          Go to site
+          See on github
         </motion.button>
       </div>
     </motion.div>

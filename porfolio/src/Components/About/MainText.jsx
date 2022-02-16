@@ -11,19 +11,42 @@ const MainText = () => {
       viewport={{ once: false }}
       transition={{ duration: 1.3 }}
       id="main-text"
-      className="flex float-left w-1/3 ml-20"
+      className="flex float-left w-3/5 ml-20"
     >
-      <div id="main-text">
-        <TitleText title={"About me"} />
+      <div id="main-text" className="flex">
+        <div id="text">
+          <TitleText addClass={"animate-bounce"} title={"About me"} />
 
-        <p className="w-3/4 pt-5 pb-5 pl-5 pr-5 mx-auto mt-20 text-2xl text-left text-gray-400 border rounded-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure enim
-          consectetur quaerat assumenda neque explicabo, natus alias
-          exercitationem aut ad a sunt, non repellendus eveniet, adipisci eos
-          praesentium rem. Ratione.
-        </p>
+          <p className="w-3/4 pt-5 pb-5 pl-5 pr-5 mx-auto mt-20 text-2xl text-left text-gray-500 border rounded-xl">
+            My name is Tomas, i&apos;m 16 y/o. Started in this world of
+            programming 2 years ago whit html and css. In 2021 I started
+            learning Javascript and the journey never stopped :D
+          </p>
+        </div>
+
+        {/* Skills */}
+
+        <div id="skills" className="w-4/5 mt-auto">
+          <TitleText title={"Skills"} addClass={"mr-10"} />
+          <div className="p-5 mr-5 font-mono text-left text-gray-500 border rounded ">
+            <PSkills addClass={" w-11/12"} title={"HTML"} />
+            <PSkills addClass={" w-10/12"} title={"CSS"} />
+            <PSkills addClass={" w-5/12"} title={"Framer motion"} />
+            <PSkills addClass={" w-11/12"} title={"Javascript"} />
+            <PSkills addClass={" w-9/12"} title={"React"} />
+            <PSkills addClass={" w-7/12"} title={"MongoDB"} />
+          </div>
+        </div>
       </div>
     </motion.div>
+  );
+};
+
+const PSkills = ({ title, addClass }) => {
+  return (
+    <>
+      <p className={`${addClass} border p-1 mb-5 rounded-xl`}>{title}</p>
+    </>
   );
 };
 

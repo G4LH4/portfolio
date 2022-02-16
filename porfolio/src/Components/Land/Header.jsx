@@ -7,18 +7,19 @@ const Header = () => {
       initial={{ opacity: 0, translateX: -50 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 1.3 }}
-      className="bg-black sticky top-0 z-50 border-b border-gray-200 px-2 sm:px-4 py-2.5"
+      className="bg-white sticky top-0 z-50 border-b border-gray-200 px-2 sm:px-4 py-2.5"
+
     >
-      <div className="container flex flex-wrap justify-between items-center mx-auto ">
+      <div className="container flex flex-wrap items-center justify-between mx-auto ">
         <a href="#" className="flex ">
-          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-black">
             GALHA
           </span>
         </a>
         <button
           data-collapse-toggle="mobile-menu"
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-500 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="mobile-menu-2"
           aria-expanded="false"
         >
@@ -50,18 +51,14 @@ const Header = () => {
         </button>
         <div className="hidden w-full md:block md:w-auto " id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-            <MotionLI title={"About"} />
-            <MotionLI title={"Projects"} />
+            <MotionLI title={"About"} goto={"#about"} />
+            <MotionLI title={"Projects"} goto={"#projects-page"} />
 
             {/* Contact li */}
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className=""
-            >
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a
                 href="#"
-                className="block py-2 pr-4 text-xl pl-3 text-white rounded bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block text-xl text-white rounded bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent"
               >
                 Contact me
               </a>
@@ -74,12 +71,12 @@ const Header = () => {
 };
 
 // eslint-disable-next-line react/prop-types
-const MotionLI = ({ title }) => {
+const MotionLI = ({ title, goto }) => {
   return (
     <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
       <a
-        href="#"
-        className="block py-2 pr-4 text-xl pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+        href={goto}
+        className="block py-2 pl-3 pr-4 text-xl text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-500 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent"
       >
         {title}
       </a>

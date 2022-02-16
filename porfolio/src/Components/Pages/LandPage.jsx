@@ -9,7 +9,7 @@ const LandPage = () => {
       initial={{ opacity: 0, translateX: -100 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 1.3 }}
-      className="w-full h-screen mx-auto text-white bg-black border-b "
+      className="w-full h-screen mx-auto text-black bg-white border-b "
     >
       {/* Main content */}
       <MainContent />

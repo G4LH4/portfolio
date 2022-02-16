@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 const Tip = ({ addClass }) => {
   const [text, setText] = useState({
@@ -16,7 +15,7 @@ const Tip = ({ addClass }) => {
   }, []);
 
   return (
-    <motion.div
+    <div
       id="tip"
       onClick={() => {
         setShowText(true);
@@ -34,7 +33,7 @@ const Tip = ({ addClass }) => {
         <div className="absolute top-0 right-0 w-4 h-4 -mt-1 -mr-1 bg-blue-300 rounded-full animate-ping"></div>
         <div className="absolute top-0 right-0 w-4 h-4 -mt-1 -mr-1 bg-blue-300 rounded-full"></div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,7 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-// TODO: fix memory leak
 
 const Tip = ({ addClass }) => {
   const [text, setText] = useState({
@@ -29,7 +28,7 @@ const Tip = ({ addClass }) => {
       className={`fixed z-index p-2 ${addClass} z-50 text-white transform -translate-x-2/2 bottom-0 mb-3 right-5 bg-gray-500 rounded shadow-2xl left-2/2 w-fit`}
     >
       <div className="relative font-mono ">
-        {showText ? <ShowText state={text.updated} /> : ""}
+        {showText ? <ShowText state={text} /> : ""}
 
         <h1 className="p-1.5">{text.text}</h1>
         <div className="absolute top-0 right-0 w-4 h-4 -mt-1 -mr-1 bg-blue-300 rounded-full animate-ping"></div>
@@ -40,18 +39,12 @@ const Tip = ({ addClass }) => {
 };
 
 const ShowText = ({ state }) => {
-  const [text, showText] = useState("Try grabbing the images");
+  const { updated } = state;
 
-  useEffect(() => {
-    setTimeout(() => {
-      showText("");
-    }, 3000);
-  }, []);
-
-  if (state) {
+  if (updated) {
     return (
       <div>
-        <h1 className={"mt-2"}>{text}</h1>
+        <h1 className={"mt-2"}>Try grabbing the images</h1>
       </div>
     );
   } else {

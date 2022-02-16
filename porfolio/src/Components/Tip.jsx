@@ -1,33 +1,35 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // TODO: fix memory leak
 
 const Tip = ({ addClass }) => {
-  const [text, setText] = useState({text: 'Try grabbing the images', updated: false});
-  const [showText, setShowText] = useState(false)
+  const [text, setText] = useState({
+    text: "Try grabbing the images",
+    updated: false,
+  });
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    setTimeout(()=>{
-      setText({text: '', updated: true})
-    },3000);
-
-  },[]);
+    setTimeout(() => {
+      setText({ text: "", updated: true });
+    }, 3000);
+  }, []);
 
   return (
     <motion.div
       id="tip"
       onClick={() => {
-        setShowText(true)
+        setShowText(true);
 
-        setTimeout(()=>{
+        setTimeout(() => {
           setShowText(false);
-        },3000)
-      }} 
+        }, 3000);
+      }}
       className={`fixed z-index p-2 ${addClass} z-50 text-white transform -translate-x-2/2 bottom-0 mb-3 right-5 bg-gray-500 rounded shadow-2xl left-2/2 w-fit`}
     >
       <div className="relative font-mono ">
-        {showText ? <ShowText state={text.updated} /> : ''}
+        {showText ? <ShowText state={text.updated} /> : ""}
 
         <h1 className="p-1.5">{text.text}</h1>
         <div className="absolute top-0 right-0 w-4 h-4 -mt-1 -mr-1 bg-blue-300 rounded-full animate-ping"></div>
@@ -37,27 +39,24 @@ const Tip = ({ addClass }) => {
   );
 };
 
+const ShowText = ({ state }) => {
+  const [text, showText] = useState("Try grabbing the images");
 
-const ShowText = ({state}) =>{
-  const [text, showText] = useState('Try grabbing the images')
+  useEffect(() => {
+    setTimeout(() => {
+      showText("");
+    }, 3000);
+  }, []);
 
-
-  useEffect(()=>{
-      setTimeout(()=>{
-          showText('');
-      },3000)
-  },[])
-
-  if(state === true){
-    return(
+  if (state) {
+    return (
       <div>
-          <h1 className={'mt-2'}>{text}</h1>
+        <h1 className={"mt-2"}>{text}</h1>
       </div>
-    )
-  }else{
-    return '';
-  } 
-
-}
+    );
+  } else {
+    return "";
+  }
+};
 
 export default Tip;

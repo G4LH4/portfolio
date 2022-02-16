@@ -1,8 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 
+import MotionIMG from "../MotionIMG";
 import MainText from "../About/MainText";
 import aboutMeIMG from "../../Img/aboutMe.svg";
-import { motion } from "framer-motion";
 
 const AboutPage = () => {
   return (
@@ -19,7 +20,7 @@ const AboutPage = () => {
           id="img"
           className="float-right w-2/5 ml-auto"
         >
-          <img src={aboutMeIMG} className="mx-auto bg-bubble2" />
+          <MotionIMG src={aboutMeIMG} addClass={"mx-auto bg-bubble2"} />
         </motion.div>
       </div>
     </div>

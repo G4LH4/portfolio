@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import TitleText from "../TitleText";
+import MotionIMG from "../MotionIMG";
 
 import WebDevelopmentIMG from "../../Img/webDevelopment.svg";
 
@@ -16,21 +17,11 @@ const MainContent = () => {
         transition={{ duration: 1.3 }}
       >
         <div className={"w-auto  flex mx-auto"}>
-          <motion.img
-            initial={{ opacity: 0, translateX: 10 }}
-            whileInView={{ opacity: 1, translateX: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1.3 }}
-            drag
-            dragConstraints={{
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
+          <MotionIMG
             src={WebDevelopmentIMG}
-            className="w-5/12 h-auto mr-0 bg-no-repeat bg-bubble"
+            addClass={"w-5/12 h-auto mr-0 bg-no-repeat bg-bubble"}
           />
+
           <motion.div
             initial={{ opacity: 0, translateY: -50 }}
             whileInView={{ opacity: 1, translateY: 50, translateX: 0 }}

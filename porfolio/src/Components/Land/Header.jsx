@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import githubIMG from '../../Img/github-logo.png';
-
+import githubIMG from "../../Img/github-logo.png";
 
 const Header = () => {
   return (
@@ -10,7 +9,6 @@ const Header = () => {
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 1.3 }}
       className="bg-white sticky top-0 z-50 border-b border-gray-200 px-2 sm:px-4 py-2.5"
-
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto ">
         <a href="#" className="flex ">
@@ -57,9 +55,9 @@ const Header = () => {
             <MotionLI title={"Projects"} goto={"#projects-page"} />
 
             {/* Contact li */}
-            <motion.li whileHover={{ scale: 1.1 }}  whileTap={{ scale: 0.9 }}>
-              <a href='https://github.com/G4LH4'>
-                  <img src={githubIMG} className={'w-fit h-8 rounded mx-auto'} />
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <a href="https://github.com/G4LH4">
+                <img src={githubIMG} className={"w-fit h-8 rounded mx-auto"} />
               </a>
             </motion.li>
           </ul>
@@ -83,4 +81,3 @@ const MotionLI = ({ title, goto }) => {
   );
 };
 export default Header;
-

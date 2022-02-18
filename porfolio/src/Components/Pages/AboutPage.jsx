@@ -12,16 +12,7 @@ const AboutPage = () => {
         {/* About title */}
         <MainText />
 
-        <motion.div
-          initial={{ opacity: 0, translateX: 100 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 1.3 }}
-          id="img"
-          className="float-right w-2/5 ml-auto"
-        >
-          <MotionIMG src={aboutMeIMG} addClass={"mx-auto bg-bubble2"} />
-        </motion.div>
+          <MotionIMG src={aboutMeIMG} addClass={"mx-auto w-2/6 bg-no-repeat mt-20 bg-bubble2"} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import githubIMG from "../../Img/github-logo.png";
+import githubIMG from "../../Img/github-logo.svg";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       initial={{ opacity: 0, translateX: -50 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 1.3 }}
-      className="bg-white sticky top-0 z-50 border-b border-gray-200 px-2 sm:px-4 py-2.5"
+      className="bg-gray-300 sticky top-0 z-50 border-b border-gray-200 px-2 sm:px-4 py-2.5"
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto ">
         <a href="#" className="flex ">

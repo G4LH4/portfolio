@@ -2,15 +2,14 @@
 import React, { useState, useEffect } from "react";
 
 const Tip = ({ addClass }) => {
-  const [text, setText] = useState({
-    text: "Try grabbing the images",
+  const [textUpdated, setTextUpdated] = useState({
     updated: false,
   });
   const [showText, setShowText] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setText({ text: "", updated: true });
+      setTextUpdated({ updated: true });
     }, 3000);
   }, []);
 
@@ -22,16 +21,16 @@ const Tip = ({ addClass }) => {
 
         setTimeout(() => {
           setShowText(false);
-        }, 3000);
+        }, 3500);
       }}
+
       className={`fixed z-index p-2 ${addClass} z-50 text-white transform -translate-x-2/2 bottom-0 mb-3 right-5 bg-gray-500 rounded shadow-2xl left-2/2 w-fit`}
     >
-      <div className="relative font-mono ">
-        {showText ? <ShowText state={text} /> : ""}
+      <div className="relative cursor-pointer  font-mono ">
+        {showText && <ShowText state={textUpdated} />}
 
-        <h1 className="p-1.5">{text.text}</h1>
-        <div className="absolute top-0 right-0 w-4 h-4 -mt-1 -mr-1 bg-blue-300 rounded-full animate-ping"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 -mt-1 -mr-1 bg-blue-300 rounded-full"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 -mt-3 -mr-3 bg-blue-300 rounded-full animate-ping"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 -mt-3 -mr-3 bg-blue-300 rounded-full"></div>
       </div>
     </div>
   );
@@ -40,10 +39,11 @@ const Tip = ({ addClass }) => {
 const ShowText = ({ state }) => {
   const { updated } = state;
 
-  if (updated) {
+
+  if (updated === true) {
     return (
       <div>
-        <h1 className={"mt-2"}>Try grabbing the images</h1>
+        <h1>Try grabbing the images</h1>
       </div>
     );
   } else {

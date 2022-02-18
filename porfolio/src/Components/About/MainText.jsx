@@ -11,23 +11,23 @@ const MainText = () => {
       viewport={{ once: false }}
       transition={{ duration: 1.3 }}
       id="main-text"
-      className="flex float-left w-3/5 ml-20"
+      className="left-0 w-3/5 "
     >
-      <div id="main-text" className="flex">
+      <div id="container" className={'ml-5'}>
         <div id="text">
-          <TitleText addClass={"animate-bounce"} title={"About me"} />
+          <TitleText addClass={"animate-bounce float-left"} title={"About me"} />
 
-          <p className="w-3/4 pt-5 pb-5 pl-5 pr-5 mx-auto mt-20 text-2xl text-left text-gray-500 border rounded-xl">
+          <p className="w-3/4 pt-5 pb-5 pl-5 pr-5 float-left mt-20 text-2xl text-left text-gray-500 border rounded-xl">
             My name is Tomas, i&apos;m 16 y/o. Started in this world of
             programming 2 years ago whit html and css. In 2021 I started
-            learning Javascript and the journey never stopped :D
+            learning Javascript and the journey never stopped :D (Obviously a
+            coffee lover )
           </p>
         </div>
 
         {/* Skills */}
 
-        <div id="skills" className="w-4/5 mt-auto">
-          <TitleText title={"Skills"} addClass={"mr-10"} />
+        <div id="skills" className="w-4/6 float-left mt-20">
           <div className="p-5 mr-5 font-mono text-left text-gray-500 border rounded ">
             <PSkills addClass={" w-11/12"} title={"HTML"} />
             <PSkills addClass={" w-10/12"} title={"CSS"} />

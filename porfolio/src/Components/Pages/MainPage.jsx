@@ -5,7 +5,7 @@ import Header from "../Land/Header";
 import LandPage from "./LandPage";
 import AboutPage from "./AboutPage";
 import ProjectsPage from "./ProjectsPage";
-import CopyRight from "./CopyRight";
+import Bottom from "./Bottom";
 
 const MainPage = () => {
   return (
@@ -15,7 +15,7 @@ const MainPage = () => {
       <LandPage />
       <AboutPage />
       <ProjectsPage />
-      <CopyRight />
+      <Bottom />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const MainContent = () => {
     <>
       <motion.div
         id="main-content"
-        className="flex w-11/12 mt-12"
+        className="flex w-11/12 pt-12"
         initial={{ opacity: 0, translateX: 100 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 1.3 }}

@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import MotionIMG from "../MotionIMG";
+import aboutMeIMG from "../../Img/aboutMe.svg";
+
 import TitleText from "../TitleText";
 
 const MainText = () => {
@@ -11,43 +14,36 @@ const MainText = () => {
       viewport={{ once: false }}
       transition={{ duration: 1.3 }}
       id="main-text"
-      className="left-0 w-3/5 "
+      className="flex w-screen"
     >
-      <div id="container" className={'ml-5'}>
-        <div id="text">
-          <TitleText addClass={"animate-bounce float-left"} title={"About me"} />
+      <div id="text" className="w-1/3 mt-20 ml-10 text-white">
+        <TitleText title={"About me"} addClass={"uppercase  "} />
 
-          <p className="w-3/4 pt-5 pb-5 pl-5 pr-5 float-left mt-20 text-2xl text-left text-gray-500 border rounded-xl">
-            My name is Tomas, i&apos;m 16 y/o. Started in this world of
-            programming 2 years ago whit html and css. In 2021 I started
-            learning Javascript and the journey never stopped :D (Obviously a
-            coffee lover )
-          </p>
-        </div>
+        <p className="mt-10 text-2xl brightness-50">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum at ad
+          molestiae maxime cum laboriosam minus totam deserunt iure quaerat
+          perferendis, a nemo architecto quo enim ab animi, quasi
+          necessitatibus.
+        </p>
 
-        {/* Skills */}
+        <p className="pt-4 mt-5 text-2xl border-t brightness-50">
+          Some of the languages that i work with are:{" "}
+          <SpanSkills>Javascript</SpanSkills> <SpanSkills>React</SpanSkills>{" "}
+          <SpanSkills>MongoDB</SpanSkills>
+          <SpanSkills>Framer motion</SpanSkills>
+          <SpanSkills>Git</SpanSkills>
+        </p>
+      </div>
 
-        <div id="skills" className="w-4/6 float-left mt-20">
-          <div className="p-5 mr-5 font-mono text-left text-gray-500 border rounded ">
-            <PSkills addClass={" w-11/12"} title={"HTML"} />
-            <PSkills addClass={" w-10/12"} title={"CSS"} />
-            <PSkills addClass={" w-5/12"} title={"Framer motion"} />
-            <PSkills addClass={" w-11/12"} title={"Javascript"} />
-            <PSkills addClass={" w-9/12"} title={"React"} />
-            <PSkills addClass={" w-7/12"} title={"MongoDB"} />
-          </div>
-        </div>
+      <div className="w-5/12 ml-40 bg-secondBubble">
+        <MotionIMG src={aboutMeIMG} addClass={""} />
       </div>
     </motion.div>
   );
 };
 
-const PSkills = ({ title, addClass }) => {
-  return (
-    <>
-      <p className={`${addClass} border p-1 mb-5 rounded-xl`}>{title}</p>
-    </>
-  );
+const SpanSkills = ({ children, color }) => {
+  return <span className="mr-3 text-purple-400">{children}</span>;
 };
 
 export default MainText;

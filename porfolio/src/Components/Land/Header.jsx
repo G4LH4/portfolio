@@ -8,18 +8,18 @@ const Header = () => {
       initial={{ opacity: 0, translateX: -50 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 1.3 }}
-      className="bg-gray-300 sticky top-0 z-50 border-b border-gray-200 px-2 sm:px-4 py-2.5"
+      className="bg-bgColor sticky top-0 z-50 px-2 sm:px-4 py-2.5"
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto ">
         <a href="#" className="flex ">
-          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-black">
+          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
             GALHA
           </span>
         </a>
         <button
           data-collapse-toggle="mobile-menu"
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-500 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="mobile-menu-2"
           aria-expanded="false"
         >
@@ -57,7 +57,7 @@ const Header = () => {
             {/* Contact li */}
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <a href="https://github.com/G4LH4">
-                <img src={githubIMG} className={"w-fit h-8 rounded mx-auto"} />
+                <img src={githubIMG} className={"w-fit h-8 rounded mx-auto "} />
               </a>
             </motion.li>
           </ul>
@@ -73,7 +73,7 @@ const MotionLI = ({ title, goto }) => {
     <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
       <a
         href={goto}
-        className="block py-2 pl-3 pr-4 text-xl text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-500 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent"
+        className="block py-2 pl-3 pr-4 text-xl text-white-700 hover:bg-purple-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent"
       >
         {title}
       </a>

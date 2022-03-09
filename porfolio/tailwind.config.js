@@ -3,12 +3,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgColor: "#1E1E1E",
+        mainColor: "#0E1136",
+        bgColor: "#355FF3",
+        imgBG: "#F53081",
       },
-      backgroundImage: {
-        bubble: "url(./src/Img/burbuja.svg)",
-        secondBubble: "url(./src/Img/burbuja2.svg)",
-      },
+      backgroundImage: {},
       fontFamily: {
         Sora: "Sora",
       },

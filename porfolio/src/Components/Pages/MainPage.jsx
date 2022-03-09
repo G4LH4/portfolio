@@ -1,6 +1,9 @@
 // wouter
 import { Route } from "wouter";
 
+// motion
+import { motion } from "framer-motion";
+
 // NavBar
 import NavBar from "../NavBar/NavBar";
 
@@ -10,9 +13,12 @@ import AboutPage from "./AboutPage";
 
 const MainPage = () => {
   return (
-    <div
+    <motion.div
       id="main-page"
       className="w-11/12 p-10 mx-auto mt-5 text-white bg-black rounded-xl"
+      initial={{ opacity: 0, x: 200 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
     >
       <NavBar />
 
@@ -22,7 +28,7 @@ const MainPage = () => {
       <Route path="/about">
         <AboutPage />
       </Route>
-    </div>
+    </motion.div>
   );
 };
 

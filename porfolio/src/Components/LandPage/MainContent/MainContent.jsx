@@ -7,18 +7,20 @@ import profileIMG from "../../../IMG/profileIMG.png";
 
 const MainContent = () => {
   return (
-    <div id="main-content" className="mt-20">
-      <div className="flex">
+    <div id="main-content" className="mt-auto">
+      <div className="flex mt-10">
         <motion.div
           id="text"
           className="w-full p-20"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
           <div id="main-text" className="pb-10 border-b">
             <h1 className="tracking-wide text-8xl">
-              Hello<span className="text-red-300">,</span> im Galha
+              Hello<span className="text-red-300 animate-pulse">,</span> <br />
+              im <br />
+              Galha
             </h1>
           </div>
           <p className="mt-10 brightness-50">
@@ -26,15 +28,16 @@ const MainContent = () => {
             enim officia.
           </p>
 
-          <div className="mt-10">
-            <Link href="/contact">
-              <a>
-                <a className="p-3 mr-20 text-black bg-red-200">Contact me</a>
-              </a>
-            </Link>
+          <div className="mt-12">
+            <a
+              href="mailto:totogalha@gmail.com"
+              className="p-2 text-black bg-red-200"
+            >
+              Contact me
+            </a>
 
             <Link href="/about">
-              <a>About me</a>
+              <a className="ml-20">About me</a>
             </Link>
           </div>
         </motion.div>
@@ -44,9 +47,16 @@ const MainContent = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <img
+          <motion.img
             src={profileIMG}
-            className="float-right w-2/3 mr-10 bg-red-300 rounded-full"
+            drag
+            dragConstraints={{
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+            className="mx-auto bg-red-300 bg-no-repeat border-4 rounded-full g-center 2xl:w-9/12"
           />
         </motion.div>
       </div>
